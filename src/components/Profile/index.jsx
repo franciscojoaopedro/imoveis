@@ -6,12 +6,12 @@ export default function Profile(){
        <>
         <Perfil>
             <ProfileImg>
-                <img src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="avatar_perfil" />
+                <img src="https://images.unsplash.com/photo-1628149329516-4b85b2225c5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="avatar_perfil" />
             </ProfileImg>
-                    <ProfileDescription>
+                <ProfileDescription>
                         <h2>Francisco Pedro</h2>
                         <p>Sobre o Corrector</p>
-                    </ProfileDescription>
+                </ProfileDescription>
         </Perfil>
 
         <ProfileContacto>
