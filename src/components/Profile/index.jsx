@@ -1,4 +1,9 @@
 import { styled } from "styled-components"
+import {MdEmail} from "react-icons/md"
+import {FaWhatsapp} from "react-icons/fa"
+import Input from "../Input"
+import TextArea from "../TextArea"
+import Button from "../Button"
 
 
 export default function Profile(){
@@ -17,17 +22,25 @@ export default function Profile(){
         <ProfileContacto>
         <h2>Informações para contacto</h2>
         <p>Corrector Junior</p>
-        <p> 937489012 </p>
-        <p>francisco@gmail.com</p>
+        <p> <FaWhatsapp size={20} /> 937489012 </p>
+        <p><MdEmail size={20} />francisco@gmail.com</p>
         </ProfileContacto>
-
+        
         <ProfileFormContact>
             <h3>Contate o anunciante</h3>
             <form>
-                <input type="text" placeholder="Nome"  required />
-                <input type="email" placeholder="E-mail" required />
-                <textarea cols="30" rows="10" placeholder="Mensagem:"></textarea>
-                <button>Enviar mensagem</button>
+                <Input
+                type="text"
+                placeholder="Nome" 
+                required
+                />
+                
+                <Input 
+                type="email" 
+                placeholder="E-mail" 
+                required />
+                <TextArea cols="30" rows="10" placeholder="Mensagem:" />
+                <Button>Enviar mensagem</Button>
             </form>
         </ProfileFormContact>
        </>
@@ -66,38 +79,7 @@ const ProfileFormContact=styled.div`
     color: var(--secondary);
 }
 form{
-    input,textarea{
-        width: 100%;
-        height: 50px;
-        padding: 8px 15px;
-        margin-bottom: 10px;
-        border-radius: 3px;
-        border: 2px solid var(--gray);
-        outline: none;
-        border-radius: 8px;
-        color: var(--secondary);
-        font-weight: 500;
-        letter-spacing: 0.1px;
-        font-size: 0.93rem;
-    }
-
-    textarea{
-        resize: none;
-        width: 100%;
-        height: auto;
-    }
-    button{
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-        background-color: var(--blue);
-        color: #FFF;
-        line-height: 24px;
-        border: none;
-        font-size: 0.8rem;
-        font-weight: 600;
-        transition: 0.3s;
-        padding: 12px 20px;
-    }
+    display: flex;
+    flex-direction: column;
 }
 `

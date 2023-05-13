@@ -1,102 +1,62 @@
 import { styled } from "styled-components";
 import Cabecalho from "../../components/cabecalho/Cabecalho";
-export default function PageLogin(){
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+export default function Login(){
     return(
        <>
         <Cabecalho/>
-        <SECTION>
-            <DICAS>
-
-                <h2>
-                    Seja Bem Vindo
-                </h2>
-                <h3>
-                    Entrar para comecar um negocio no sector imobiliario!
-                </h3>
-                <h3>
-                    Aqui voce encontras casas dos teus gostos!
-                </h3>
-                <h4> Registar </h4>
-            </DICAS>
-            <FORM>
-               <INPUTS>
-                <label >Email</label>
-                <INPUT type="email" required  placeholder="email@examplo.com"/>
-               </INPUTS>
-               <INPUTS>
-                <label >Senha</label>
-                <INPUT type="password"  required/>
-               </INPUTS>
-               <INPUTS>
-                <BUTTON type="submit">Entrar</BUTTON>
-               </INPUTS>
-            </FORM>
-        </SECTION>
+        <Container>
+            <h2>Acesse a sua conta</h2>
+            <p>Entra com o seu emial e senha</p>
+            <ContainerForm>
+                <Form>
+                <Label>E-mail</Label>
+                <Input
+                type="email"
+                required
+                placeholder="email@exemplo.com"
+                />
+                 <Label>Senha</Label>
+                <Input
+                 type="password"
+                 required
+                 placeholder="***********"
+                />
+            <Button>Entrar</Button>
+                </Form>
+            </ContainerForm>
+        </Container>
        </>
     )
 }
 
-const SECTION=styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #cecece;
-   // background: url("../../../public/az.jpeg");
-    width: 100%;
-    min-height: 100svh;
-`
-const FORM=styled.form`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 15px;
-    border-radius: 8px;
-    width: 400px;
-    height: 300px;
-    background: #fffc;
-`
-const INPUTS=styled.div`
-display: flex;
-justify-content: center;
-align-items: flex-start;
-flex-direction: column;
-color: #fff;
-font-weight: 700;
-margin: 5px 0;
-`
-const INPUT=styled.input`
-    border: none;
-    outline: 0;
-    border-radius: 8px;
-    width: 100%;
-    padding: 10px 2px;
-    line-height: 150%;
-
-`
-
-const BUTTON=styled.button`
-padding: 5px 32px;
-background-color: ;
-color: #fff;
-border: none;
-border-radius: 8px;
-font-size: 18px;
-font-weight: 500;
-background-color: lightskyblue;
-cursor: pointer;
-`
-
-const LABEL=styled.label`
-
-`
-
-const DICAS=styled.div`
- width: 400px;
-    height: 300px;
+const Container=styled.div`
+padding: 100px 150px;
 display: flex;
 justify-content: center;
 align-items: center;
-color: #fff;
 flex-direction: column;
+h2{
+    font-size: 1.75rem;
+}
+p{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
 `
+const ContainerForm=styled.div`
+padding: 35px;
+width: 370px;
+background-color: #e2e8f0;
+`
+const Form=styled.form`
+width: 100%;
+
+`
+ const Label=styled.label`
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 500;
+ `

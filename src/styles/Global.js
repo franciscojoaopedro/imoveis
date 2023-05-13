@@ -18,7 +18,7 @@ export default createGlobalStyle`
 
 
 body{
-    background-color: var(--primary);
+    background: var(--primary);
     color: var(--secondary);
     font-size: 1.2rem;
     font-weight: 400;

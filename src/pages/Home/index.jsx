@@ -1,6 +1,8 @@
 import {styled} from "styled-components"
 import Card from "../../components/Card"
 import {FcSearch} from "react-icons/fc"
+import Destaques from "../../components/destaques";
+import Cabecalho from "../../components/cabecalho/Cabecalho";
 export default function Home(){
     const Cards=[]
     for(let i=0;i<4;i++){
@@ -9,10 +11,11 @@ export default function Home(){
 
     return(
         <>
+        <Cabecalho/>
+            <Destaques/>
             <Header>
                 <h2><FcSearch/> Encontra a casa dos teus sonhos. </h2>
             </Header>
-
             <Wrapper>
                 {Cards}
             </Wrapper>
