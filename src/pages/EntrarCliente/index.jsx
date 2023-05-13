@@ -1,11 +1,9 @@
 import { styled } from "styled-components";
-import Cabecalho from "../../components/cabecalho/Cabecalho";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 export default function Login(){
     return(
        <>
-        <Cabecalho/>
         <Container>
             <h2>Acesse a sua conta</h2>
             <p>Entra com o seu emial e senha</p>

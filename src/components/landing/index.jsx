@@ -24,7 +24,7 @@ export default function Landing(){
             <Home/>  
             <Imobi/>
     */}
-            <Rodape/>
+
         </Container>
     )
 }

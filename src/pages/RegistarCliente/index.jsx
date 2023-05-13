@@ -1,11 +1,9 @@
 import { styled } from "styled-components";
-import Cabecalho from "../../components/cabecalho/Cabecalho";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 export default function Cadastro(){
     return(
        <>
-        <Cabecalho/>
         <Container>
             <h2>Cria a sua conta</h2>
             <p>Cadastra-se para fazer parte da nossa plataforma</p>

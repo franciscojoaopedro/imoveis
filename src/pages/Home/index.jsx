@@ -11,7 +11,6 @@ export default function Home(){
 
     return(
         <>
-        <Cabecalho/>
             <Destaques/>
             <Header>
                 <h2><FcSearch/> Encontra a casa dos teus sonhos. </h2>

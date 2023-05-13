@@ -6,7 +6,7 @@ export default function Destaques(){
         <Container className="Destaques">
                 <Text>
                     <h2>Encontras melhores casas aqui!</h2>
-                    <p>Compre e alugue imóveis com a maior imobiliária do Brasil Encontre o
+                    <p>Compre e alugue imóveis com a maior imobiliária de Luanda Encontre o
                      seu lugar Comprar Alugar Comprar na Planta Comprar Pronto Valor Área do imóvel Dormitórios
                      …</p>
                      <span>Encontra os Imoveis</span>

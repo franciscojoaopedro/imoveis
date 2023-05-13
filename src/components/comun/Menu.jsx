@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import {styled} from "styled-components"
+
 export default function Menu(){
     return(
         <NAV>
@@ -10,11 +12,14 @@ export default function Menu(){
                     <a href="#">Agentes</a>
                 </li>
                 <li>
+                    <Link to="/cadastro">
                    <a href="#">Registar</a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#">Entrar</a>
-
+                  <Link to="/login">
+                  <a href="#">Entrar</a>
+                  </Link>
                 </li>
             </ul>
         </NAV>

@@ -1,7 +1,9 @@
 import {styled}from "styled-components";
 import CasaImagem from "../../assets/casa_unsplash_1.jpg";
 import {FaMapMarkerAlt} from "react-icons/fa"
-import {FcMoneyTransfer,FcGlobe,FcInfo,FcAbout,FcRight} from "react-icons/fc"
+import {FcMoneyTransfer,FcInfo,FcAbout} from "react-icons/fc"
+import { Link } from "react-router-dom";
+
 
 export default function Card(){
     return(
@@ -15,7 +17,7 @@ export default function Card(){
                 <span> <FaMapMarkerAlt/> Luanda,Talatona</span>
                 <span><FcMoneyTransfer/>  580.000,00 KZ</span>
             </Items>
-            <a href="#">Detalhes<FcAbout/></a>
+            <Link to="/imovel">Detalhes<FcAbout/></Link>
         </Description>
     </Container>
     )

@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom"
 import {styled} from "styled-components"
+
 export default function Logo(){
     return(
+       <Link to="/">
         <Logotipo>
             <PrimeiroTexto>Despa</PrimeiroTexto>
             <SegundoTexto>Chou</SegundoTexto>
         </Logotipo>
+        </Link>
     )
 }
 
