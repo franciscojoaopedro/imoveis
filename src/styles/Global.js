@@ -12,7 +12,7 @@ export default createGlobalStyle`
      --primary:#f7f9fc;
      --secondary:#15181c;
      --gray:#d9d9d9;
-     --blue:#4766ff;
+     --blue:#0ea5e9;
      --white:#fff;
 }
 
@@ -26,8 +26,12 @@ body{
 }
 
 ul,nav{list-style: none;}
-a{text-decoration:none;
+a{
+    text-decoration:none;
+    cursor: pointer;
+}
 
-cursor: pointer;
+button{
+    cursor: pointer;
 }
 `
