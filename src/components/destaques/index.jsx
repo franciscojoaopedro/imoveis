@@ -14,12 +14,13 @@ export default function Destaques(){
         </Container>
     )
 }
-
+/*
 const MudarDestaques= async ()=>{
     const imageUrl="public/casa_unsplash_1.jpg"
    const destaque= document.querySelector(".Destaques");
    destaque.style.backgroundImage.url=imageUrl;
 }
+*/
 
 const Container=styled.div`
     padding: 200px 150px;
