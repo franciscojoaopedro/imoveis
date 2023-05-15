@@ -1,23 +1,26 @@
 import {styled}from "styled-components";
-import CasaImagem from "../../assets/casa_unsplash_1.jpg";
 import {FaMapMarkerAlt} from "react-icons/fa"
 import {FcMoneyTransfer,FcInfo,FcAbout} from "react-icons/fc"
 import { Link } from "react-router-dom";
 
+import  {urlApi} from "../../services/API.js"
 
-export default function Card(){
+export default function Card({thumb,tipo,cidade,endereco,valor,key,id}){
     return(
-    <Container>
+    <Container
+    key={key}
+    >
         <Img>
-        <img src={CasaImagem} alt=""/>
+        <img src={`${urlApi}/uploads/${thumb}`} alt=""/>
         </Img>
         <Description>
-            <h4><FcInfo/> Apartamento</h4>
+            <h4><FcInfo/> {tipo}</h4>
             <Items>
-                <span> <FaMapMarkerAlt/> Luanda,Talatona</span>
-                <span><FcMoneyTransfer/>  580.000,00 KZ</span>
+                <span><FaMapMarkerAlt/>Província: {cidade}</span>
+                <span><FaMapMarkerAlt/>Endereco: {endereco}</span>
+                <span><FcMoneyTransfer/>Preço: {valor} </span>
             </Items>
-            <Link to="/imovel">Detalhes<FcAbout/></Link>
+            <Link to={`/imovel/${id}`}>Detalhes<FcAbout/></Link>
         </Description>
     </Container>
     )
@@ -33,8 +36,8 @@ border-radius: 10px;
 const Img=styled.div`
 width: 100%;
 img{
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 200px;
 }
 `;
 const Description=styled.div`

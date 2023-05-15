@@ -28,19 +28,42 @@ export default function Profile(){
         
         <ProfileFormContact>
             <h3>Contate o anunciante</h3>
-            <form>
+            <form 
+            action="https://formsubmit.co/franciscojoaopedro1998@gmail.com"
+            method="POST"
+            >
                 <Input
+                name="_next"
+                type="hidden"
+                value="http://localhost:5173"
+                />
+                <Input
+                name="_autoresponse"
+                type="hidden"
+                value="Recebemos sua menssagem, obrigada pelo interesse 
+                no nossos imoveis,logo responderemos!
+                OBRIGADO..
+                "
+                />
+                 <Input
+                name="_captcha"
+                type="hidden"
+                value="false"
+                />
+                <Input
+                name="nome"
                 type="text"
                 placeholder="Nome" 
                 required
                 />
                 
                 <Input 
+                name="email"
                 type="email" 
                 placeholder="E-mail" 
                 required />
-                <TextArea cols="30" rows="10" placeholder="Mensagem:" />
-                <Button>Enviar mensagem</Button>
+                <TextArea cols="30" rows="10"  name="mensagem" placeholder="Mensagem:" />
+                <Button type="submit" >Enviar mensagem</Button>
             </form>
         </ProfileFormContact>
        </>

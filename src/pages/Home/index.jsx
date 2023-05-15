@@ -2,13 +2,20 @@ import {styled} from "styled-components"
 import Card from "../../components/Card"
 import {FcSearch} from "react-icons/fc"
 import Destaques from "../../components/destaques";
-import Cabecalho from "../../components/cabecalho/Cabecalho";
+import Api from "../../services/API";
+import { useEffect, useState } from "react";
 export default function Home(){
-    const Cards=[]
+    /*const Cards=[]
     for(let i=0;i<4;i++){
         Cards.push(<Card key={i}></Card>);
     }
-
+    */
+const [imobi,setImobi]=useState([])
+useEffect(()=>{
+    Api.get("/findallimobis")
+    .then((response)=>setImobi(response.data.imoveis))
+    .catch((error)=>console.log(error))
+},[])
     return(
         <>
             <Destaques/>
@@ -16,7 +23,17 @@ export default function Home(){
                 <h2><FcSearch/> Encontra a casa dos teus sonhos. </h2>
             </Header>
             <Wrapper>
-                {Cards}
+                {imobi.map(item=>(
+                    <Card
+                    key={item.id}
+                    thumb={item.thumb}
+                    tipo={item.tipo}
+                    endereco={item.endereco}
+                    valor={item.valor}
+                    cidade={item.cidade}
+                    id={item.id}
+                    />
+                ))}
             </Wrapper>
         </>
     )

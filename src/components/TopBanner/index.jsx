@@ -1,14 +1,15 @@
 import { styled } from "styled-components"
+import { urlApi } from "../../services/API"
 
 
 
-export default function TopBanner(){
+export default function TopBanner({thumb,tipo,descricao}){
+    const urlImage=`${urlApi}/uploads/${thumb}`;
     return(
-
-<Container>
+<Container style={{backgroundImage:`url(${urlImage})`}}>
         <Text>
-            <h2>Apartamentos</h2>
-            <p>Melhores apartamentos de Luanda, encontra aqui mais que suas espectativas..</p>
+            <h2>{tipo}</h2>
+            <p>{descricao}</p>
         </Text>
 </Container>
     )
@@ -18,16 +19,20 @@ padding: 50px 150px;
 position: relative;
 background-size: cover;
 background-position: center;
-background-image: url("apartamentos_1.jpg");
-:before{
-    //background-color: rgba(0,0,0,.2);
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+//background-image: url(urlImage);
+
+&{
+
+    :before{
+       // background-color: rgba(0,0,0,.1);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
 }
 
 `

@@ -14,6 +14,8 @@ export default function Destaques(){
         </Container>
     )
 }
+
+
 /*
 const MudarDestaques= async ()=>{
     const imageUrl="public/casa_unsplash_1.jpg"
