@@ -19,7 +19,7 @@ padding: 50px 150px;
 position: relative;
 background-size: cover;
 background-position: center;
-background-image: url("/public/apartamentos_1.jpg");
+background-image: url('apartamentos_1.jpg');
 
 &{
 
