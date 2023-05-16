@@ -11,7 +11,7 @@ export default function Profile(){
        <>
         <Perfil>
             <ProfileImg>
-                <img src="https://images.unsplash.com/photo-1628149329516-4b85b2225c5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="avatar_perfil" />
+                <img src="https://avatars.githubusercontent.com/u/79996151?v=4" alt="avatar_perfil" />
             </ProfileImg>
                 <ProfileDescription>
                         <h2>Francisco Pedro</h2>
@@ -75,10 +75,10 @@ display: flex;
 justify-content: space-between;
 `
 const ProfileImg=styled.div`
-    width: 200px;
+    width: 100%;
     img{
-        width: 100%;
-        height: auto;
+        width: 200px;
+        height: 186px;
         border-radius:5px;
     }
 `

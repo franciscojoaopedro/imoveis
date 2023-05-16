@@ -36,7 +36,7 @@ const NAV=styled.nav`
         gap: 5px;
         li{
             font-size: 1.2rem;
-            border: 1px solid var(--gray);
+           // border: 1px solid var(--gray);
             border-radius: 10px;
             padding: 10px;
             &:hover{

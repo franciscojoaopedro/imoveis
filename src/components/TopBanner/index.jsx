@@ -6,7 +6,7 @@ import { urlApi } from "../../services/API"
 export default function TopBanner({thumb,tipo,descricao}){
     const urlImage=`${urlApi}/uploads/${thumb}`;
     return(
-<Container style={{backgroundImage:`url(${urlImage})`}}>
+<Container>
         <Text>
             <h2>{tipo}</h2>
             <p>{descricao}</p>
@@ -19,7 +19,7 @@ padding: 50px 150px;
 position: relative;
 background-size: cover;
 background-position: center;
-//background-image: url(urlImage);
+background-image: url("/public/apartamentos_1.jpg");
 
 &{
 

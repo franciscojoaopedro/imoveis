@@ -14,7 +14,7 @@ export default function CardS({thumb,key,tipo,cidade,endereco,valor,id}){
     >
         <Description>
         <Img>
-        <img src={image} alt=""/>
+        <img src={`${image}`} alt=""/>
         </Img>
             <h4><FcInfo/> {tipo}</h4>
             <Items>

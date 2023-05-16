@@ -68,7 +68,7 @@ border: 1px solid rgb(0,0,0,.1);
  
 `
 const Right=styled.div`
-    width: 30%;
+    width: 40%;
     padding: 10px;
     border: 1px solid rgb(0,0,0,.1);
     border-radius: 5px;
