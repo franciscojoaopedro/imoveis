@@ -1,9 +1,10 @@
 import {styled} from "styled-components"
-import Card from "../../components/Card"
+
 import {FcSearch} from "react-icons/fc"
 import Destaques from "../../components/destaques";
 import Api from "../../services/API";
 import { useEffect, useState } from "react";
+import CardS from "../../components/Card";
 export default function Home(){
     /*const Cards=[]
     for(let i=0;i<4;i++){
@@ -24,7 +25,7 @@ useEffect(()=>{
             </Header>
             <Wrapper>
                 {imobi.map(item=>(
-                    <Card
+                    <CardS
                     key={item.id}
                     thumb={item.thumb}
                     tipo={item.tipo}

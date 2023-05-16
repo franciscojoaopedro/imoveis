@@ -1,7 +1,8 @@
 import axios from "axios";
-export const urlApi='https://api-imoveis-despachou.up.railway.app' || "https://api-imoveis-despachou.up.railway.app/";
+
+export const urlApi='https://api-imoveis-despachou.up.railway.app' || "http://localhost:8000";
 const Api=axios.create({
-    baseURL:"https://api-imoveis-despachou.up.railway.app" || "https://api-imoveis-despachou.up.railway.app",
+    baseURL:"https://api-imoveis-despachou.up.railway.app" || "http://localhost:8000",
     headers:{
         "Content-Type":"application/json"
     }

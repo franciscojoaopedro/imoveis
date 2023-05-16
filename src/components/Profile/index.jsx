@@ -22,7 +22,7 @@ export default function Profile(){
         <ProfileContacto>
         <h2>Informações para contacto</h2>
         <p>Corrector Junior</p>
-        <p> <FaWhatsapp size={20} /> 937489012 </p>
+        <p> <a href="https://api.whatsapp.com/send/?phone=937489012" ><FaWhatsapp size={32} /> 937489012</a> </p>
         <p><MdEmail size={20} />francisco@gmail.com</p>
         </ProfileContacto>
         
@@ -56,7 +56,6 @@ export default function Profile(){
                 placeholder="Nome" 
                 required
                 />
-                
                 <Input 
                 name="email"
                 type="email" 
@@ -94,6 +93,12 @@ const ProfileContacto=styled.div`
     h3,p{
     margin-bottom: 15px;
     color: var(--secondary);
+}
+p{
+    a{
+        color: #10b981;
+        font-weight: bold;
+    }
 }
 `
 const ProfileFormContact=styled.div`
