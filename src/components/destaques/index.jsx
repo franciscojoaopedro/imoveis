@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {styled} from "styled-components";
 
 export default function Destaques(){
@@ -9,7 +10,9 @@ export default function Destaques(){
                     <p>Compre e alugue imóveis com a maior imobiliária de Luanda Encontre o
                      seu lugar Comprar Alugar Comprar na Planta Comprar Pronto Valor Área do imóvel Dormitórios
                      …</p>
-                     <span>Encontra os Imoveis</span>
+                    <Link to="/imoveis">
+                    <span>Encontra os Imoveis</span>
+                    </Link>
                 </Text>
         </Container>
     )
