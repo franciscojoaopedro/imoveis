@@ -34,6 +34,7 @@ margin-bottom: 12px;
 background-color: var(--white);
 box-shadow: 4px  4px 2px 4px rgba(0,0,0,0.1);
 border-radius: 10px;
+height: max-content;
 `;
 const Img=styled.div`
 width: 100%;

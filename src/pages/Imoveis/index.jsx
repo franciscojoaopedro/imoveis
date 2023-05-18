@@ -5,13 +5,13 @@ import Input from "../../components/Input"
 import {FcSearch}from "react-icons/fc"
 import {FaBuilding}from "react-icons/fa"
 import Api from "../../services/API"
+import Categoria from "../../components/Categoria";
 
 
 
 export default function PaginaDeImoveis(){
     const [imoveis,setImoveis]=useState([])
     const [textInput,setTextInput]=useState('')
-    
     useEffect(  () =>{
         pesquisarImoveis()
          Api(`http://localhost:8000/pesquisar?pesquisar=${textInput}`)
@@ -27,7 +27,7 @@ export default function PaginaDeImoveis(){
     console.log("são imoves",imoveis)
     
     return(
-    <Container>
+<Container>
        <BarraPesquisa>
         <Input
         type="search"
@@ -39,25 +39,11 @@ export default function PaginaDeImoveis(){
         <FcSearch  onClick={()=>alert(textInput)} size={32} />
        </a>
        </BarraPesquisa>
-        <ContainerFlex>
-       <Categoria>
-        <Text>
-            <h3>Categoria</h3>    
-            <div>
-                <ul>
-                    <li value="Vivendas"  onClick={()=>setTextInput("Vivendas")} >Vivendas</li>
-                   <li  value="Apartamentos"  onClick={()=>setTextInput("Apartamento")}  ><FaBuilding/> Apartamentos</li>
-                   <li value="Terreno"onClick={()=>setTextInput("Terreno")} >Terreno</li>
-                   <li value="Condominio" onClick={()=>setTextInput("Condominio")} >Condomio</li>
-                   <li value="Loja" onClick={()=>setTextInput("Loja")}>Lojas</li>
-                   <li   value="Imoveis" onClick={()=>setTextInput("")}>Outros imoveis</li>
-                </ul>
-            </div>
-        </Text>
-       </Categoria>
+    <ContainerFlex>
+        <Categoria/>
         <ListaImoveis>
             {
-            imoveis.map((item)=>( <CardS
+           imoveis.map((item)=>( <CardS
             key={item.id}
             thumb={item.thumb}
             tipo={item.tipo}
@@ -65,12 +51,11 @@ export default function PaginaDeImoveis(){
             valor={item.valor}
             cidade={item.cidade}
             id={item.id}
-            />))}
+           />))}
          
-    
         </ListaImoveis>
 </ContainerFlex>
-    </Container>
+</Container>
     )
 }
 
@@ -82,39 +67,6 @@ position: relative;
     justify-content: center;
     align-items: center;
     
-`
-const Text=styled.div`
-padding: 10px;
-display: flex;
-justify-content:flex-start ;
-align-items: flex-start;
-flex-direction: column;
-
-h3{
-    color: #fff;
-    font-weight: 700;
-}
-div{
-    ul{
-        li{
-            font-size: 20px;
-            color: #cececc;
-            font-weight: 700;
-            margin-bottom: 5px;
-            cursor: pointer;
-               
-        }
-
-        li:hover{
-           
-                    padding: 5px 20px ;
-                    color: #cececc;
-                    border-bottom:  3px solid #fff;
-             
-            
-        }
-    }
-}
 `
 const ContainerFlex=styled.div`
         display: flex;
@@ -134,8 +86,7 @@ a{
     background: var(--blue);
 }
 
-`
-
+`;
 const ListaImoveis=styled.div`
 display: flex;
 justify-content: center;
@@ -143,16 +94,4 @@ align-items: center;
 flex-wrap: wrap;
 gap: 10px;
 flex-basis: 100%;
-`
-const Categoria=styled.div`
-left: 0;
-width: 30%;
-background: var(--blue);
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-height: 600px;
-flex-direction: column;
-
-
-`
+`;
