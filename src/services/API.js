@@ -2,9 +2,9 @@ import axios from "axios";
 
 const url='https://api-imoveis-despachou.up.railway.app' || "http://localhost:8000";
 
-export const urlApi='http://localhost:8000' || "http://localhost:8000";
+export const urlApi=url;
 const Api=axios.create({
-    baseURL:"http://localhost:8000" || "http://localhost:8000",
+    baseURL:url,
     headers:{
         "Content-Type":"application/json"
     }
