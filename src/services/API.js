@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url='https://api-imoveis-despachou.up.railway.app' || "http://localhost:8000";
+const url='https://srv-imoveis.onrender.com' || "http://localhost:8000";
 
 export const urlApi=url;
 const Api=axios.create({

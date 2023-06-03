@@ -42,7 +42,7 @@ export default function PaginaDeImoveis(){
     <ContainerFlex>
         <Categoria/>
         <ListaImoveis>
-            {
+            {/*
            imoveis.map((item)=>( <CardS
             key={item.id}
             thumb={item.thumb}
@@ -51,7 +51,13 @@ export default function PaginaDeImoveis(){
             valor={item.valor}
             cidade={item.cidade}
             id={item.id}
-           />))}
+           />))*/}
+           <CardS/>
+           <CardS/>
+           <CardS/>
+           <CardS/>
+           <CardS/>
+           <CardS/>
          
         </ListaImoveis>
 </ContainerFlex>

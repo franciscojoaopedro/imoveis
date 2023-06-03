@@ -16,7 +16,6 @@ export default function Login(){
         await auth.authenticate(email,password);
     }
 
-
     return(
        <>
         <Container>

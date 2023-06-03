@@ -1,4 +1,4 @@
-import {Routes,BrowserRouter,Route,Navigate} from "react-router-dom"
+import {Routes,BrowserRouter,Route} from "react-router-dom"
 import Home from "../pages/Home";
 import Cabecalho from "../components/cabecalho/Cabecalho";
 import Rodape from "../components/rodape";
