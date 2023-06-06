@@ -14,7 +14,7 @@ export default function PaginaDeImoveis(){
     const [textInput,setTextInput]=useState('')
     useEffect(  () =>{
         pesquisarImoveis()
-         Api(`http://localhost:8000/pesquisar?pesquisar=${textInput}`)
+         Api(`https://srv-imoveis.onrender.com/pesquisar?pesquisar=${textInput}`)
         .then(response=>{
             setImoveis(response.data.imovel)
         })
