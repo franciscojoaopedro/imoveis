@@ -34,7 +34,7 @@ useEffect(()=>{
                 <h2><BsFillBuildingsFill/></h2>
             </Header>
             <Wrapper>
-                {/*imobi.map(item=>(
+                {imobi.map(item=>(
                     <CardS
                     key={item.id}
                     thumb={item.thumb}
@@ -44,13 +44,17 @@ useEffect(()=>{
                     cidade={item.cidade}
                     id={item.id}
                     />
-                ))*/}
+                ))}
+               {/*
+               
                 <CardS/>
                 <CardS/>
                 <CardS/>
                 <CardS/>
                 <CardS/>
                 <CardS/>
+               */
+               } 
             </Wrapper>
         </>
     )
