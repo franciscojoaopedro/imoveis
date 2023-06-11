@@ -1,10 +1,10 @@
 import { styled } from "styled-components"
-import { urlApi } from "../../services/API"
+import {APIURL_IMAGES } from "../../services/API"
 
 
 
 export default function TopBanner({thumb,tipo,descricao}){
-    const urlImage=`${urlApi}/uploads/${thumb}`;
+    const urlImage=`${APIURL_IMAGES}/uploads/${thumb}`;
     return(
 <Container>
         <Text>

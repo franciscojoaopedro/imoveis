@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import TopBanner from "../../components/TopBanner";
 import Profile from "../../components/Profile";
 import { useEffect, useState } from "react";
-import Api, { urlApi } from "../../services/API";
+import Api, { APIURL_IMAGES } from "../../services/API";
 import { useParams } from "react-router-dom";
 
 
@@ -36,7 +36,7 @@ export default function Imobi(){
         <Container>
             <Left>
                 <Thumb>
-                    <img src= {`${urlApi}/uploads/${thumb}`} alt="apartamentos" />
+                    <img src= {`${APIURL_IMAGES}/uploads/${thumb}`} alt="apartamentos" />
                 </Thumb>
                 <Description>
                     <h2>{tipo}</h2>

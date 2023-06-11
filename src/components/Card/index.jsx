@@ -2,11 +2,14 @@ import {styled}from "styled-components";
 import {FaMapMarkerAlt} from "react-icons/fa"
 import {FcMoneyTransfer,FcInfo,FcAbout} from "react-icons/fc"
 import { Link } from "react-router-dom";
-import  {urlApi} from "../../services/API.js"
+import { APIURL_IMAGES } from "../../services/API";
+//import  {urlApi} from "../../services/API.js"
+
+
 
 export default function CardS({thumb,key,tipo,cidade,endereco,valor,id}){
 
-    let image=`${urlApi}/uploads/${thumb}`
+    let image=`${APIURL_IMAGES}/uploads/${thumb}`
     return(
 
     <Container
