@@ -6,7 +6,8 @@ import TextArea from "../TextArea"
 import Button from "../Button"
 
 
-export default function Profile(){
+export default function Profile({nome,email,contacto}){
+
     return(
        <>
         <Perfil>
@@ -14,7 +15,7 @@ export default function Profile(){
                 <img src="https://avatars.githubusercontent.com/u/79996151?v=4" alt="avatar_perfil" />
             </ProfileImg>
                 <ProfileDescription>
-                        <h2>Francisco Pedro</h2>
+                        <h2>{nome}</h2>
                         <p>Sobre o Corrector</p>
                 </ProfileDescription>
         </Perfil>
@@ -22,14 +23,14 @@ export default function Profile(){
         <ProfileContacto>
         <h2>Informações para contacto</h2>
         <p>Corrector Junior</p>
-        <p> <a href="https://api.whatsapp.com/send/?phone=937489012" ><FaWhatsapp size={32} /> 937489012</a> </p>
-        <p><MdEmail size={20} />francisco@gmail.com</p>
+        <p> <a href={`https://api.whatsapp.com/send/?phone=${contacto}`} ><FaWhatsapp size={32} />{contacto}</a> </p>
+        <p><MdEmail size={20} />{email}</p>
         </ProfileContacto>
         
         <ProfileFormContact>
             <h3>Contate o anunciante</h3>
             <form 
-            action="https://formsubmit.co/franciscojoaopedro1998@gmail.com"
+            action={`https://formsubmit.co/${email}`}
             method="POST"
             >
                 <Input

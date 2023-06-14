@@ -10,14 +10,30 @@ import { useParams } from "react-router-dom";
 export default function Imobi(){
     const[dataimobi,setDataImobi]=useState([]);
     const {id}=useParams()
+    const [idUser,setIdUser]=useState();
+    const [contacto,setContacto]=useState();
+    const [nome,setNome]=useState();
+    const [email,setEmail]=useState();
     useEffect(()=>{
         Api.get(`/imobi/${id}`)
         .then((response)=>{
+            console.log("casa_do:", response.data.imovel.userID)
+            setIdUser(response.data.imovel.userID)
             setDataImobi(response.data.imovel)
         })
         .catch((error)=>console.log(error))
     },[])
 
+    useEffect(()=>{
+        Api.get(`/user/${idUser}`)
+        .then((response)=>{
+            console.log(response.data)
+            setContacto(response.data.contacto);
+            setEmail(response.data.email);
+            setNome(response.data.nome)
+        })
+        .catch((error)=>console.error(error))
+    })
     const {
         tipo,
         cidade,
@@ -48,7 +64,12 @@ export default function Imobi(){
             </Left>
 
             <Right>
-                <Profile/>
+                <Profile
+                nome={nome}
+                contacto={contacto}
+                email={email}
+               
+                />
             </Right>
         </Container>
        </>

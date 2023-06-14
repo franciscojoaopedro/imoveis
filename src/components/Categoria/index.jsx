@@ -11,7 +11,7 @@ export default function Categoria(){
             <h3>Categoria</h3>    
             <div>
                 <ul>
-                    <li value="Vivendas"  onClick={()=>setTextInput("Vivendas")} > <GiHouse/> Vivendas</li>
+                    <li   value="Vivendas"  onClick={()=>setTextInput("Vivendas")} > <GiHouse/> Vivendas</li>
                    <li  value="Apartamentos"  onClick={()=>setTextInput("Apartamento")}  ><FaBuilding/> Apartamentos</li>
                    <li value="Terreno"onClick={()=>setTextInput("Terreno")} > <MdTerrain/> Terreno</li>
                    <li value="Condominio" onClick={()=>setTextInput("Condominio")} >Condominio</li>
@@ -59,11 +59,12 @@ div{
 const Container=styled.div`
 left: 0;
 width: 30%;
+position: sticky;
 background: var(--blue);
-display: flex;
+display: block;
 justify-content: flex-start;
 align-items: flex-start;
-height: 600px;
+height: 100vh;
 flex-direction: column;
 
 `

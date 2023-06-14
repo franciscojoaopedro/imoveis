@@ -24,7 +24,7 @@ const RouterApp=()=>{
                 <Route path="/login" element={<Login/>}  />
                 <Route path="/cadastro" element={<Cadastro/>}/>
                 <Route path="/imoveis" element={<PaginaDeImoveis/>}  />
-                <Route path="/perfil" element={<Perfil/>}/>
+                <Route path="/perfil"  loader={<Perfil/>} element={<Perfil/>}/>
                 <Route path="*" element={<Error/>}  />
             </Routes>
         <Rodape/>

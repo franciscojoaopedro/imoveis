@@ -3,7 +3,6 @@ import { styled } from "styled-components"
 import CardS from "../../components/Card"
 import Input from "../../components/Input"
 import {FcSearch}from "react-icons/fc"
-import {FaBuilding}from "react-icons/fa"
 import Api from "../../services/API"
 import Categoria from "../../components/Categoria";
 
@@ -40,7 +39,9 @@ export default function PaginaDeImoveis(){
        </a>
        </BarraPesquisa>
     <ContainerFlex>
-        <Categoria/>
+        <Categoria
+        
+        />
         <ListaImoveis>
             {
            imoveis.map((item)=>( <CardS
@@ -74,13 +75,12 @@ position: relative;
     display: flex;
     padding: 20px 60px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   
     
 `
 const ContainerFlex=styled.div`
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: flex-start;
 `
 const BarraPesquisa=styled.div`
@@ -95,13 +95,18 @@ a{
     padding: 5px;
     background: var(--blue);
 }
-
+input{
+    align-items: center;
+}
 `;
 const ListaImoveis=styled.div`
+width: 100%;
+height: auto;
+
 display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 gap: 10px;
-flex-basis: 100%;
+flex-basis: 90%;
 `;
