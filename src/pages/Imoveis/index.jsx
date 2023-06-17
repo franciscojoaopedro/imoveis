@@ -26,7 +26,7 @@ export default function PaginaDeImoveis(){
     console.log("são imoves",imoveis)
     
     return(
-<Container>
+    <Container>
        <BarraPesquisa>
         <Input
         type="search"

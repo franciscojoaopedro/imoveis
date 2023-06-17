@@ -6,10 +6,7 @@ export default function Menu(){
         <NAV>
             <ul>
                 <li>
-                    <a href="#">Sobre</a>
-                </li>
-                <li>
-                    <a href="#">Agentes</a>
+                    <a href="#">Corretores</a>
                 </li>
                 <li>
                     <Link to="/cadastro">
@@ -37,13 +34,15 @@ const NAV=styled.nav`
         li{
             font-size: 1.2rem;
            // border: 1px solid var(--gray);
-            border-radius: 10px;
-            padding: 10px;
+            padding:  0 10px;
             &:hover{
-                background-color:var(--gray);
+                
+                border-bottom: 3px solid #fff;
             }
             a{
                 color: #fff;
+                font-weight: 300;
+                font-size: 18px;
             }
         }
 
