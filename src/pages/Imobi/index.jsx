@@ -17,26 +17,31 @@ export default function Imobi(){
     const [email,setEmail]=useState();
 
 
-    useEffect(   ()   =>{
-        Api.get(`/imobi/${id}`)
-        .then((response)=>{
+    useEffect(   ()=>{
+        buscarImoveisPorId()
+        pegarIdUser()
+    }
+    ,[])
+
+    async function buscarImoveisPorId ()   {
+      await  Api.get(`/imobi/${id}`)
+        .then( async (response)=>{
             console.log("casa_do:", response.data.imovel.userID)
-            setIdUser(Number(response.data.imovel.userID))
-            setDataImobi(response.data.imovel)
+           setDataImobi(  await response.data.imovel)
+            setIdUser( await response.data.imovel.userID)
         })
         .catch((error)=>console.log(error))
-    },[])
-
-     useEffect(  ()   =>{
-        Api.get(`/user/${idUser}`)
-        .then((response)=>{
+    }
+  async function pegarIdUser  () {
+        await Api.get(`/user/${Number(idUser)}`)
+        .then(async (response)=>{
             console.log(response.data)
-            setContacto(response.data.contacto);
-            setEmail(response.data.email);
-            setNome(response.data.nome)
+            setContacto( await response.data.contacto);
+            setEmail(await response.data.email);
+            setNome(await response.data.nome)
         })
         .catch((error)=>console.error(error))
-    },[])
+    }
     const {
         tipo,
         cidade,
@@ -71,7 +76,7 @@ export default function Imobi(){
                 nome={nome}
                 contacto={contacto}
                 email={email}
-               
+               key={nome}
                 />
             </Right>
         </Container>
