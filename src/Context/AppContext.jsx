@@ -25,8 +25,10 @@ export const AppContextProvider=({children})=>{
             }else{
                 toast.error(response.data.message);
             }
+            console.log(response.data.user)
+            const id=response.data.user.id;
             const email=response.data.user.email;
-            const payload={token:response.data.token,email}
+            const payload={token:response.data.token,email,id}
             setUser(payload)
             SetLocaStorage(payload);
             window.location.href="/perfil";

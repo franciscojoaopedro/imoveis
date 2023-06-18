@@ -49,9 +49,9 @@ export default function Login(){
                  onChange={(e)=>setPassword(e.target.value)}
                  placeholder="***********"
                 />
-                <Link to={"/perfil"}>
+              
                 <Button type="submit" >Entrar</Button>
-                </Link>
+                
             <h4>
                 Não tenho uma conta?<Link to={"/cadastro"} >
                 Inscreva-se

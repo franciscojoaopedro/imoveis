@@ -21,7 +21,7 @@ export default function TopBanner({thumb,tipo,descricao}){
 }
 const Banner=styled.div`
 width: 100%;
-position: absolute;
+
 top: 0;
 left: 0;
 

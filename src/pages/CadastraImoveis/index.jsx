@@ -6,6 +6,7 @@ import { useState } from "react";
 import Api from "../../services/API";
 import { toast } from "react-toastify";
 import TextArea from "../../components/TextArea";
+import { GetLocalStorage } from "../../Context/utils";
 
 
 export default function CadastroImoveis(){
@@ -18,10 +19,11 @@ export default function CadastroImoveis(){
     const [descricao,setDescricao]=useState()
     const [slug,setSlug]=useState()
 
-   
+   const user =GetLocalStorage()
+   console.log("usuario logado quero id",user.id)
 
     const imovel={
-        id:1,
+        id:user.id,
         thumb,
         tipo,
 		endereco,
