@@ -33,7 +33,7 @@ export default function Imobi(){
             setNome(response.data.nome)
         })
         .catch((error)=>console.error(error))
-    })
+    },[])
     const {
         tipo,
         cidade,
@@ -45,7 +45,7 @@ export default function Imobi(){
     return(
        <>
         <TopBanner
-            thumb={thumb}
+            thumb={`${APIURL_IMAGES}/uploads/${thumb}`}
             tipo={tipo}
             descricao={descricao}
         />

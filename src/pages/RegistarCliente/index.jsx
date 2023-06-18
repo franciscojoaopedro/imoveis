@@ -5,7 +5,8 @@ import TopBanner from "../../components/TopBanner";
 import { useState } from "react";
 import Api from "../../services/API";
 import { toast } from "react-toastify";
-
+import imagemLeft from "../../assets/house-amico.svg"
+import { Link } from "react-router-dom";
 
 export default function Cadastro(){
     const [data,setData]=useState({
@@ -35,9 +36,15 @@ export default function Cadastro(){
     return(
        <>
       <TopBanner/>
+      <ContainerFlex>
+        <ImagemLeft>
+            <img
+            src={imagemLeft}
+            />
+        </ImagemLeft>
         <Container>
             <h2>Cria a sua conta</h2>
-            <p>Cadastra-se para fazer parte da nossa plataforma</p>
+            <p>Faça parte da nossa plataforma</p>
             <ContainerForm>
                 <Form  onSubmit={handleSubmit} >
                 <Label>Nome</Label>
@@ -66,19 +73,48 @@ export default function Cadastro(){
                  onChange={InuptValue}
                 />
             <Button type="submit" >Cadastrar</Button>
+            
                 </Form>
             </ContainerForm>
         </Container>
+      </ContainerFlex>
        </>
     )
 }
 
+
+const ContainerFlex=styled.div`
+position: relative;
+width: 100%;
+display: flex;
+background: #407BFF;
+`
+const ImagemLeft=styled.div`
+padding: 10px;
+width:50%;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+img{
+    width:100%;
+    height: auto;
+}
+
+`
+
 const Container=styled.div`
-padding: 100px 150px;
+border-left: 2px solid blue;
+width: 70%;
+padding: 10px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+color: #fff;
+
 h2{
     font-size: 1.75rem;
 }
@@ -89,9 +125,9 @@ p{
 
 `
 const ContainerForm=styled.div`
-padding: 35px;
+padding: 20px;
 width: 370px;
-background-color: #e2e8f0;
+background: transparent;
 `
 const Form=styled.form`
 width: 100%;

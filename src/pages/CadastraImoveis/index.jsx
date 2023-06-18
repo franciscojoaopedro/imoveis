@@ -7,6 +7,7 @@ import Api from "../../services/API";
 import { toast } from "react-toastify";
 import TextArea from "../../components/TextArea";
 
+
 export default function CadastroImoveis(){
     const [thumb,setthumb]=useState()
     const [tipo,setTipo]=useState()
@@ -16,6 +17,8 @@ export default function CadastroImoveis(){
     const [valor,setValor]=useState()
     const [descricao,setDescricao]=useState()
     const [slug,setSlug]=useState()
+
+   
 
     const imovel={
         id:1,
@@ -27,6 +30,7 @@ export default function CadastroImoveis(){
 		valor,
         descricao,
 		slug 
+
     }
     const onImageChange = (event) => {
        
@@ -38,7 +42,14 @@ export default function CadastroImoveis(){
     
     const handleSubmit=  async (event)=>{
         event.preventDefault();
-        await Api.post("/createimobi",imovel)
+        const headers={
+            "headers":{
+                "content-type":"multipart/form-data"
+            }
+        }
+        console.log(imovel,headers)
+
+       await Api.post("/createimobi",imovel,headers)
         .then((response)=>{
             console.log(response)
             if(!response.data.error===true){
@@ -63,7 +74,6 @@ export default function CadastroImoveis(){
                 <Label>Thumb</Label>
                 <Input
                 type="file"
-               
                 required
                 name="thumb"
                 onChange={onImageChange}

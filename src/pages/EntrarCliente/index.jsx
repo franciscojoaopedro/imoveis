@@ -5,6 +5,10 @@ import { useState } from "react";
 import { AppAuth } from "../../Context/AppAuth";
 import { toast } from "react-toastify";
 
+import imageLeft from "../../assets/house-amico.svg"
+import { Link } from "react-router-dom";
+
+
 export default function Login(){
     const auth=AppAuth();
     const [email,setEmail]=useState();
@@ -14,16 +18,20 @@ export default function Login(){
     const handleLogin= async (event)=>{
         event.preventDefault()
         await auth.authenticate(email,password);
+        toast.success("seja bem vindo")
     }
 
     return(
-       <>
-        <Container>
-            <h2>Acesse a sua conta</h2>
+       <ContainerFlex>
+       <ImagemLeft>
+            <img src={imageLeft} />
+       </ImagemLeft>
+       <Container>
+            <h2>Login</h2>
             <p>Entra com o seu emial e senha</p>
             <ContainerForm  onSubmit={handleLogin} >
                 <Form>
-                <Label>E-mail</Label>
+                <Label>Username</Label>
                 <Input
                 type="email"
                 required
@@ -32,7 +40,7 @@ export default function Login(){
                 placeholder="email@exemplo.com"
                 onChange={(e)=>setEmail(e.target.value)}
                 />
-                 <Label>Senha</Label>
+                 <Label>Password</Label>
                 <Input
                  type="password"
                  value={password}
@@ -41,24 +49,55 @@ export default function Login(){
                  onChange={(e)=>setPassword(e.target.value)}
                  placeholder="***********"
                 />
-            <Button type="submit" >Entrar</Button>
+                <Link to={"/perfil"}>
+                <Button type="submit" >Entrar</Button>
+                </Link>
+            <h4>
+                Não tenho uma conta?<Link to={"/cadastro"} >
+                Inscreva-se
+                </Link>
+            </h4>
                 </Form>
             </ContainerForm>
         </Container>
-       </>
+       </ContainerFlex>
     )
 }
 
+const ContainerFlex=styled.div`
+position: relative;
+width: 100%;
+display: flex;
+background: #22d3ee;
+`
+const ImagemLeft=styled.div`
+width: 50%;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+img{
+    width:100%;
+    height: auto;
+}
+
+`
 const Container=styled.div`
-padding: 100px 150px;
+width: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+background: #407BFF;
 h2{
     font-size: 1.75rem;
+    color: #fff;
+    line-height: 1.4em;
 }
 p{
+    color: #fff;
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
@@ -67,7 +106,9 @@ p{
 const ContainerForm=styled.div`
 padding: 35px;
 width: 370px;
-background-color: #e2e8f0;
+background: transparent;
+color: #fff;
+
 `
 const Form=styled.form`
 width: 100%;

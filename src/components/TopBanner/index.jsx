@@ -7,6 +7,11 @@ export default function TopBanner({thumb,tipo,descricao}){
     const urlImage=`${APIURL_IMAGES}/uploads/${thumb}`;
     return(
 <Container>
+    <Banner>
+        <img
+        src={'apartamentos_1.jpg'}
+        />
+    </Banner>
         <Text>
             <h2>{tipo}</h2>
             <p>{descricao}</p>
@@ -14,13 +19,27 @@ export default function TopBanner({thumb,tipo,descricao}){
 </Container>
     )
 }
+const Banner=styled.div`
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+
+img{
+    width: 100%;
+    height: 250px;
+}
+`
 const Container=styled.div`
-padding: 50px 150px;
-position: relative;
+
+padding: 100px 150px ;
+width: 100%;
 background-size: cover;
 background-position: center;
-background-image: url('apartamentos_1.jpg');
+background-color: black;
+//background-image: url('apartamentos_1.jpg');
 
+/*
 &{
 
     :before{
@@ -34,6 +53,7 @@ background-image: url('apartamentos_1.jpg');
         z-index: 1;
     }
 }
+*/
 
 `
 const Text=styled.div`

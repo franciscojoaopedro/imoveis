@@ -21,8 +21,9 @@ body{
     background: var(--primary);
     color: var(--secondary);
     font-size: 1.2rem;
-    font-weight: 400;
-    font-family: 'Roboto Mono', monospace;
+    line-height: 1.3em;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul,nav{list-style: none;}
