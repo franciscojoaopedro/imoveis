@@ -6,44 +6,36 @@ import {APIURL_IMAGES } from "../../services/API"
 export default function TopBanner({thumb,tipo,descricao}){
     const urlImage=`${APIURL_IMAGES}/uploads/${thumb}`;
     return(
-<Container>
-    <Banner>
+<Container key={tipo}>
+    <Banner key={tipo+1}>
         <img
-        src={'apartamentos_1.jpg'}
+        src={thumb}
         />
-    </Banner>
         <Text>
             <h2>{tipo}</h2>
             <p>{descricao}</p>
         </Text>
+    </Banner>
 </Container>
     )
 }
 const Banner=styled.div`
 width: 100%;
+display: block;
+justify-content: center;
+align-items: center;
 
-top: 0;
-left: 0;
 
 img{
+    top: 0;
     width: 100%;
-    height: 250px;
-}
-`
-const Container=styled.div`
+    height:500px;
 
-padding: 100px 150px ;
-width: 100%;
-background-size: cover;
-background-position: center;
-background-color: black;
-//background-image: url('apartamentos_1.jpg');
-
-/*
-&{
-
+    opacity:.4;
+    &{
+    
     :before{
-       // background-color: rgba(0,0,0,.1);
+        background-color: rgba(0,0,0,.1);
         content: '';
         position: absolute;
         top: 0;
@@ -52,7 +44,19 @@ background-color: black;
         height: 100%;
         z-index: 1;
     }
+    }
 }
+
+`
+const Container=styled.div`
+padding: 100px 150px;
+width: 100%;
+background-size: cover;
+background-position: center;
+background-color: black;
+
+/*
+
 */
 
 `

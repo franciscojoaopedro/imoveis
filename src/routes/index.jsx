@@ -9,7 +9,6 @@ import Imobi from "../pages/Imobi";
 import Perfil from "../pages/Perfil";
 import PaginaDeImoveis from "../pages/Imoveis";
 
-//  "@types/react-router-dom": "^6.11.1",
 
 
 const  isAuth=()=>localStorage.getItem("Yt")
@@ -17,7 +16,7 @@ const  isAuth=()=>localStorage.getItem("Yt")
 const RouterApp=()=>{
     return(
         <BrowserRouter>
-        <Cabecalho/>
+        <Cabecalho key={123} />
             <Routes>
                 <Route path="/"   element={<Home/>}/>
                 <Route path="/imovel/:id" element={<Imobi/>}/>

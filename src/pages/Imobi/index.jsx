@@ -8,23 +8,26 @@ import { useParams } from "react-router-dom";
 
 
 export default function Imobi(){
-    const[dataimobi,setDataImobi]=useState([]);
+    
     const {id}=useParams()
+    const[dataimobi,setDataImobi]=useState([]);
     const [idUser,setIdUser]=useState();
     const [contacto,setContacto]=useState();
     const [nome,setNome]=useState();
     const [email,setEmail]=useState();
-    useEffect(()=>{
+
+
+    useEffect(   ()   =>{
         Api.get(`/imobi/${id}`)
         .then((response)=>{
             console.log("casa_do:", response.data.imovel.userID)
-            setIdUser(response.data.imovel.userID)
+            setIdUser(Number(response.data.imovel.userID))
             setDataImobi(response.data.imovel)
         })
         .catch((error)=>console.log(error))
     },[])
 
-    useEffect(()=>{
+     useEffect(  ()   =>{
         Api.get(`/user/${idUser}`)
         .then((response)=>{
             console.log(response.data)
