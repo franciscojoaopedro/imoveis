@@ -4,6 +4,7 @@ import Profile from "../../components/Profile";
 import { useEffect, useState } from "react";
 import Api, { APIURL_IMAGES } from "../../services/API";
 import { useParams } from "react-router-dom";
+import Destaques from "../../components/destaques";
 
 
 
@@ -52,11 +53,7 @@ export default function Imobi(){
     } =dataimobi;
     return(
        <>
-        <TopBanner
-            thumb={`${APIURL_IMAGES}/uploads/${thumb}`}
-            tipo={tipo}
-            descricao={descricao}
-        />
+       <Destaques/>
         <Container>
             <Left>
                 <Thumb>

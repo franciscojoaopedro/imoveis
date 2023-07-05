@@ -5,15 +5,9 @@ import { useEffect, useState } from "react";
 
 export default function Perfil(){
 
-    const  isAuth=localStorage.getItem("Yt")
-    const [userExist,setUserExist]=useState(false)
-   useEffect(()=>{
-       if(isAuth=="string"){
-           setUserExist(true)
-        }
-   },[])
+
     return (
-        userExist?
+     
        <Container>
                 <Left>
                     <h1>Lado esquerdo</h1>
@@ -21,7 +15,7 @@ export default function Perfil(){
                 <Reght>
                     <CadastroImoveis/>
                 </Reght>
-        </Container>:(window.location.href="/sem-perfil")
+        </Container>
         )
 }
 const Container=styled.div`

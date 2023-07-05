@@ -2,12 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  appType: 'mpa',
-  plugins: [react(),rewriteSlashToIndexHtml(),],
-})
-
 const rewriteSlashToIndexHtml = () => {
   return {
     name: 'rewrite-slash-to-index-html',
@@ -24,4 +18,10 @@ const rewriteSlashToIndexHtml = () => {
     },
   }
 }
+// https://vitejs.dev/config/
+export default defineConfig({
+  appType: 'mpa',
+  plugins: [react(),rewriteSlashToIndexHtml(),],
+})
+
 

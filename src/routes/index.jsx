@@ -8,11 +8,11 @@ import Login from "../pages/EntrarCliente";
 import Imobi from "../pages/Imobi";
 import Perfil from "../pages/Perfil";
 import PaginaDeImoveis from "../pages/Imoveis";
+import { PrivateRoute } from "./routePrivate";
 
 
 
 const  isAuth=()=>localStorage.getItem("Yt")
-
 const RouterApp=()=>{
     return(
         <BrowserRouter>
@@ -23,7 +23,13 @@ const RouterApp=()=>{
                 <Route path="/login" element={<Login/>}  />
                 <Route path="/cadastro" element={<Cadastro/>}/>
                 <Route path="/imoveis" element={<PaginaDeImoveis/>}  />
-                <Route path="/perfil"   element={<Perfil/>} />
+                <Route path="/perfil"   element={
+                    <PrivateRoute>
+                        <Perfil/>
+                    </PrivateRoute>
+                } 
+                    
+                    />
                 <Route path="*" element={<Error/>}  />
             </Routes>
         <Rodape/>
