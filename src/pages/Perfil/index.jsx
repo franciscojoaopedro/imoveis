@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import CadastroImoveis from "../CadastraImoveis";
 import { useEffect, useState } from "react";
-
+import imagemLeft from "../../assets/imoveis.svg"
 
 export default function Perfil(){
 
@@ -9,9 +9,13 @@ export default function Perfil(){
     return (
      
        <Container>
-                <Left>
-                    <h1>Lado esquerdo</h1>
-                </Left>
+                
+                <ImagemLeft>
+            <img
+            src={imagemLeft}
+            />
+        </ImagemLeft>
+               
                 <Reght>
                     <CadastroImoveis/>
                 </Reght>
@@ -23,10 +27,22 @@ const Container=styled.div`
     justify-content: center;
     align-items: center;
 `
-const Left=styled.div`
 
-`
 
 const Reght=styled.div`
+
+`
+const ImagemLeft=styled.div`
+width: 50%;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+img{
+    width:100%;
+    height: auto;
+}
 
 `

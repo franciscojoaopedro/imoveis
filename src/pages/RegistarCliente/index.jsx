@@ -5,13 +5,14 @@ import TopBanner from "../../components/TopBanner";
 import { useState } from "react";
 import Api from "../../services/API";
 import { toast } from "react-toastify";
-import imagemLeft from "../../assets/house-amico.svg"
+import imagemLeft from "../../assets/imoveis.svg";
 import { Link } from "react-router-dom";
 
 export default function Cadastro(){
     const [data,setData]=useState({
         nome:"",
         email:"",
+        contacto:"",
         password:""
     })
 
@@ -35,7 +36,6 @@ export default function Cadastro(){
     }
     return(
        <>
-      <TopBanner/>
       <ContainerFlex>
         <ImagemLeft>
             <img
@@ -64,6 +64,16 @@ export default function Cadastro(){
                 name="email"
 
                 />
+                <Label>Contacto</Label>
+                <Input
+                type="tel"
+                required
+                placeholder="999 999 999"
+                onChange={InuptValue}
+                name="contacto"
+
+                />
+                
                  <Label>Senha</Label>
                 <Input
                  type="password"

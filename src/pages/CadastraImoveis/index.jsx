@@ -7,6 +7,7 @@ import Api from "../../services/API";
 import { toast } from "react-toastify";
 import TextArea from "../../components/TextArea";
 import { GetLocalStorage } from "../../Context/utils";
+import imagemLeft from "../../assets/house-amico.svg"
 
 
 export default function CadastroImoveis(){
@@ -55,7 +56,7 @@ export default function CadastroImoveis(){
         .then((response)=>{
             console.log(response)
             if(!response.data.error===true){
-                toast.success(response.data.message);
+                toast.success("Cadastrado com sucesso");
             }else{
                 toast.error(response.data.message);
             }
@@ -66,21 +67,20 @@ export default function CadastroImoveis(){
     
     }
     return(
-       <>
-      <TopBanner/>
+       
         <Container>
             <h2>Cadastra os seus imoveis</h2>
             <p>Venda aqui os teus imoveis</p>
             <ContainerForm>
                 <Form  onSubmit={handleSubmit} >
-                <Label>Thumb</Label>
+                <Label>Foto do imovel</Label>
                 <Input
                 type="file"
                 required
                 name="thumb"
                 onChange={onImageChange}
                 />
-                <Label>Tipo</Label>
+                <Label>Tipo de imoveil</Label>
                 <Input
                  type="text"
                  required
@@ -88,7 +88,7 @@ export default function CadastroImoveis(){
                  onChange={(event)=>setTipo(event.target.value)}
                 />
 
-                <Label>Valor</Label>
+                <Label>Preço</Label>
                 <Input
                  type="text"
                  required
@@ -96,7 +96,9 @@ export default function CadastroImoveis(){
                  value={valor}
                  onChange={(event)=>setValor(event.target.value)}
                 />
-                <Label>endereco</Label>
+               <displayFormFlex>
+
+               <Label>Endereço do imovel</Label>
                 <Input
                  type="text"
                  required
@@ -105,7 +107,7 @@ export default function CadastroImoveis(){
                  onChange={(event)=>setEndereco(event.target.value)}
                 />
 
-                <Label>cidade</Label>
+                <Label>Endereco/Cidade</Label>
                 <Input
                  type="text"
                  required
@@ -113,7 +115,7 @@ export default function CadastroImoveis(){
                  value={cidade}
                  onChange={(event)=>setCidade(event.target.value)}
                 />
-               <Label>uf</Label>
+               <Label>UF</Label>
                 <Input
                  type="text"
                  required
@@ -121,8 +123,9 @@ export default function CadastroImoveis(){
                  value={uf}
                  onChange={(event)=>setUf(event.target.value)}
                 />
+               </displayFormFlex>
 
-                <Label>slug</Label>
+                <Label>Titulos do imoveil</Label>
                 <Input
                  type="text"
                  required
@@ -131,7 +134,7 @@ export default function CadastroImoveis(){
                  onChange={(event)=>setSlug(event.target.value)}
                 />
                  
-                <Label>Descricao</Label>
+                <Label>Descrição sobre o</Label>
                 <TextArea
                 type="text"
                 value={descricao}
@@ -143,12 +146,18 @@ export default function CadastroImoveis(){
                 </Form>
             </ContainerForm>
         </Container>
-       </>
+  
     )
 }
 
+const displayFormFlex=styled.div`
+display: flex;
+flex-direction: row;
+
+`
+
+/*
 const Container=styled.div`
-padding: 100px 150px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -162,10 +171,67 @@ p{
 }
 
 `
+
 const ContainerForm=styled.div`
 padding: 35px;
 width: 370px;
 background-color: #e2e8f0;
+`
+const Form=styled.form`
+width: 100%;
+
+`
+ const Label=styled.label`
+    display: flex;
+    margin-bottom: 10px;
+    font-weight: 500;
+ `
+*/
+const ContainerFlex=styled.div`
+position: relative;
+width: 100%;
+display: flex;
+background: #22d3ee;
+`
+const ImagemLeft=styled.div`
+width: 50%;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+img{
+    width:100%;
+    height: auto;
+}
+
+`
+const Container=styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background: #407BFF;
+h2{
+    font-size: 1.75rem;
+    color: #fff;
+    line-height: 1.4em;
+}
+p{
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+`
+const ContainerForm=styled.div`
+padding: 35px;
+width: 370px;
+background: transparent;
+color: #fff;
+
 `
 const Form=styled.form`
 width: 100%;

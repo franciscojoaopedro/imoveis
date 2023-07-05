@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AppAuth } from "../../Context/AppAuth";
 import { toast } from "react-toastify";
 
-import imageLeft from "../../assets/house-amico.svg"
+import imageLeft from "../../assets/login.svg"
 import { Link } from "react-router-dom";
 
 

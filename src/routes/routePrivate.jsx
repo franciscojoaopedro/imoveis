@@ -7,7 +7,6 @@ export   function PrivateRoute({children}){
     const [userExist,setUserExist]=useState()
     useEffect(()=>{
        if(isAuth){
-        alert("logado")
            setUserExist(true)
         }
         else{
