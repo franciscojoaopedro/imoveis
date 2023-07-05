@@ -13,7 +13,7 @@ export default function PaginaDeImoveis(){
     const [textInput,setTextInput]=useState('')
     useEffect(  () =>{
         pesquisarImoveis()
-         Api(`https://srv-imoveis.onrender.com/pesquisar?pesquisar=${textInput}`)
+         Api(`https://imoveis-api.up.railway.app/pesquisar?pesquisar=${textInput}`)
         .then(response=>{
             setImoveis(response.data.imovel)
         })

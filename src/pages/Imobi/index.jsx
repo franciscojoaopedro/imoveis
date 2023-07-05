@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import TopBanner from "../../components/TopBanner";
 import Profile from "../../components/Profile";
 import { useEffect, useState } from "react";
 import Api, { APIURL_IMAGES } from "../../services/API";
@@ -18,9 +17,9 @@ export default function Imobi(){
     const [email,setEmail]=useState();
 
 
-    useEffect(   ()=>{
-        buscarImoveisPorId()
+    useEffect(()=>{
         pegarIdUser()
+        buscarImoveisPorId()
     }
     ,[])
 
@@ -34,12 +33,12 @@ export default function Imobi(){
         .catch((error)=>console.log(error))
     }
   async function pegarIdUser  () {
-        await Api.get(`/user/${Number(idUser)}`)
-        .then(async (response)=>{
+        await Api.get(`/user/${idUser}`)
+        .then((response)=>{
             console.log(response.data)
-            setContacto( await response.data.contacto);
-            setEmail(await response.data.email);
-            setNome(await response.data.nome)
+            setContacto( response.data.contacto);
+            setEmail( response.data.email);
+            setNome( response.data.nome)
         })
         .catch((error)=>console.error(error))
     }
@@ -73,7 +72,7 @@ export default function Imobi(){
                 nome={nome}
                 contacto={contacto}
                 email={email}
-               key={nome}
+               key={id}
                 />
             </Right>
         </Container>

@@ -4,6 +4,7 @@ import {FaWhatsapp} from "react-icons/fa"
 import Input from "../Input"
 import TextArea from "../TextArea"
 import Button from "../Button"
+import avatar from "../../assets/Mobile UX-bro.svg"
 
 
 export default function Profile({nome,email,contacto}){
@@ -12,11 +13,10 @@ export default function Profile({nome,email,contacto}){
        <>
         <Perfil>
             <ProfileImg>
-                <img src="https://avatars.githubusercontent.com/u/79996151?v=4" alt="avatar_perfil" />
+                <img src={`${avatar}`} alt="avatar_perfil" />
             </ProfileImg>
                 <ProfileDescription>
                         <h2>{nome}</h2>
-                        <p>Sobre o Corrector</p>
                 </ProfileDescription>
         </Perfil>
 
@@ -36,7 +36,7 @@ export default function Profile({nome,email,contacto}){
                 <Input
                 name="_next"
                 type="hidden"
-                value="http://localhost:5173"
+                value="https://despachou-imoveis.vercel.app/"
                 />
                 <Input
                 name="_autoresponse"
